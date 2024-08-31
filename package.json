@@ -1,0 +1,24 @@
+{
+  "name": "xpto",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "tsc",
+    "start": "npm run build && node dist/main.js",
+    "start:dev": "tsnd --rs ./src/main.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.2",
+    "jest": "^29.4.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.5"
+  }
+}
