@@ -15,10 +15,13 @@ const values = [
         for (const value of values) {
             const correlationId = value.correlationId
 
-            setCorrelationId(correlationId, async () => {
-                const result = await calculatorApplication.exec(value.a, value.b)
-                console.log(`Resultado da soma: ${result}`)
-            })
+            setCorrelationId(correlationId)
+
+            const result = await calculatorApplication.exec(value.a, value.b)
+            console.log(result)
         }
+
+        const result = await calculatorApplication.exec(values[0].a, values[3].b)
+        console.log(result)
     }
 )()

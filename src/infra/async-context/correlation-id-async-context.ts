@@ -6,8 +6,13 @@ type RequestContext = {
 
 const asyncLocalStorage = new AsyncLocalStorage<RequestContext>();
 
-export function setCorrelationId(correlationId: string, callback: () => void) {
+export function runWithCorrelationId(correlationId: string, callback: () => unknown) {
     asyncLocalStorage.run({ correlationId }, callback);
+}
+
+export function setCorrelationId(correlationId: string) {
+    const store: RequestContext = { correlationId }
+    asyncLocalStorage.enterWith(store)
 }
 
 export function getCorrelationId(): string {
